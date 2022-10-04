@@ -262,7 +262,8 @@ We keep stacking the increases so we have also en_inc_total
 #endif
             // now we extract a new energy_new[which][x] 
             en_extr = extractValue(offst+x*increment, btc, 1, 0, s_d); // offset 74 todays module energy channel 0
-
+            Inv_Data[which].en_extern[x] = en_extr;
+           
             //we calculate a new energy value for this panel and remember it
             if ( Inv_Prop[which].invType == 2) {
               en_saved[which][x] = (en_extr / (float)1000 /100) * calliBration; //[Wh]
@@ -383,7 +384,8 @@ String sValue="\"svalue\":\"";
        toMQTT += ",\"p2\":\"" + String(Inv_Data[which].power[2]) + "\",\"p3\":\"" + String(Inv_Data[which].power[3])  +  "\"";
        }
        toMQTT += ",\"energy\":\"" + String(Inv_Data[which].en_total, 1) + "\"";
-       //Serial.println("we do not publish to domoticz, mess is : " + toMQTT);    
+       //Serial.println("we do not publish to domoticz, mess is : " + toMQTT);
+       toMQTT += ",\"en_extern0\":\"" + String([which].en_extern[0]) + "\",\"en_extern1\":\"" + String(Inv_Data[which].en_extern[1]) + "\"";
        toMQTT += "}";
        break;  
        
