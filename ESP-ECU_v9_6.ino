@@ -132,6 +132,7 @@ char dcc[4][5] = {"00.0", "00.0", "00.0", "00.0"};              // ampere <100
 char dcv[4][5] = {"00.0", "00.0", "00.0", "00.0"};              // volt <100
 char power[5][6]={"000.0", "000.0", "000.0", "000.0", "000.0"}; //watt < 1000
 float en_total = 0;
+float en_extern[4] = 0;
 } inverterdata;
 inverterdata Inv_Data[9];
   
