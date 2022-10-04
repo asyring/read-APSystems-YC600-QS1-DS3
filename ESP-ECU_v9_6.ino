@@ -109,6 +109,7 @@ int recovered = 0;
 
   int t_saved[YC600_MAX_NUMBER_OF_INVERTERS] = {0};
   float en_saved[YC600_MAX_NUMBER_OF_INVERTERS][4] = {0};
+  float en_extern[YC600_MAX_NUMBER_OF_INVERTERS][4] = {0};
   
   char txBuffer[50];
 
